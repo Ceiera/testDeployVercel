@@ -1,0 +1,230 @@
+{
+    "info": {
+        "_postman_id": "7ecc2b0d-3204-4860-99b3-db277383635a",
+        "name": "AssesmentBantu",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "register user",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:5000/users/register",
+                            "path": [
+                                "users",
+                                "register"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"random@gmail.com\",\n  \"password\": \"12345678\",\n  \"name\": \"random\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "login user",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:5000/users/login",
+                            "path": [
+                                "users",
+                                "login"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"random@gmail.com\",\n  \"password\": \"12345678\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "update user ",
+                    "request": {
+                        "method": "PATCH",
+                        "url": {
+                            "raw": "localhost:5000/users/6753db25e4d2781616dba2a6",
+                            "path": [
+                                "users",
+                                "6753db25e4d2781616dba2a6"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"random@gmail.com\",\n  \"password\": \"12345678\",\n  \"name\": \"randosm\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "delete user",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:5000/users/6753db25e4d2781616dba2a6",
+                            "path": [
+                                "users",
+                                "6753db25e4d2781616dba2a6"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Service",
+            "item": [
+                {
+                    "name": "create service",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:5000/services",
+                            "path": [
+                                "services"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"Ambil sarang semut\",\n  \"description\": \"membersihkan dari semut menggangu\",\n  \"price\": 999999,\n  \"category\": \"Barang\",\n  \"location\": \"Jawa Tengah\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUzZGIyNWU0ZDI3ODE2MTZkYmEyYTYiLCJlbWFpbCI6InJhbmRvbUBnbWFpbC5jb20iLCJuYW1lIjoicmFuZG9tIiwiYWRkcmVzcyI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0xMi0wN1QwNToyMDozNy4wOTFaIiwidXBkYXRlQXQiOm51bGwsImRlbGV0ZWRBdCI6bnVsbCwiaWF0IjoxNzMzNjg3MTk4fQ.RaoOVU4QKWmqpGAGtyNoymMOIjSptQkLj69PnYJcOgc",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get All Services",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:5000/services?location=Jawa Barat",
+                            "query": [
+                                {
+                                    "key": "location",
+                                    "value": "Jawa Barat"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "services"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUzZGIyNWU0ZDI3ODE2MTZkYmEyYTYiLCJlbWFpbCI6InJhbmRvbUBnbWFpbC5jb20iLCJuYW1lIjoicmFuZG9tIiwiYWRkcmVzcyI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0xMi0wN1QwNToyMDozNy4wOTFaIiwidXBkYXRlQXQiOm51bGwsImRlbGV0ZWRBdCI6bnVsbCwiaWF0IjoxNzMzNjg3MTk4fQ.RaoOVU4QKWmqpGAGtyNoymMOIjSptQkLj69PnYJcOgc",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Booking",
+            "item": [
+                {
+                    "name": "create booking",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:5000/bookings",
+                            "path": [
+                                "bookings"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"user_id\": \"6753db25e4d2781616dba2a6\",\n  \"service_id\": \"6756174182fe146fe005e4a1\",\n  \"schedule_date\": \"2022-09-13\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "get all booking by user id",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:5000/bookings/6753db25e4d2781616dba2a6",
+                            "path": [
+                                "bookings",
+                                "6753db25e4d2781616dba2a6"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
